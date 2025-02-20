@@ -10,7 +10,7 @@ const Books = () => {
       return response.json()
       //return Promise.regect //simulates failed fetch
     },
-    staleTime: Infinity
+    //staleTime: Infinity
   })
   
 
@@ -19,6 +19,7 @@ const Books = () => {
 return (
   <div>
     <h1 className="text-2xl font-bold">Books</h1>
+    <h2 className="text-2xl font-bold">Manage Books</h2>
     {
       isPending ? <div>Loading...</div> : <BooksTable books={data} />
     }
