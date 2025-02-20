@@ -1,4 +1,4 @@
-function BooksTable({tableData}) {
+function BooksTable({ books }) {
   return (
     <div>
       <h1 className="text-2xl font-bold">Manage Books</h1>
@@ -15,7 +15,7 @@ function BooksTable({tableData}) {
           </tr>
         </thead>
         <tbody>
-  {tableData.map(book => {
+  {books.map(book => {
     return (
       <tr key={book.id} className="hover:bg-gray-100">
         <td className="border border-gray-300 px-4 py-2">{book.id}</td>

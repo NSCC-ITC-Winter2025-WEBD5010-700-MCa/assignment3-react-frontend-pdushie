@@ -1,41 +1,29 @@
-//import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import BooksTable from "../components/BooksTable";
 const Books = () => {
 
-  const { isPending, error, data: books } = useQuery({
+  const { isPending, error, data } = useQuery({
     queryKey: ['booksData'],
     queryFn: async () => {
+      console.log('Fetching data')
       const response = await fetch('http://localhost:3000/books');
       return response.json()
       //return Promise.regect //simulates failed fetch
     },
     staleTime: Infinity
   })
+  
 
-  if (isPending) return <div>Loading...</div>;
-
-  //if (error) return <div>{`An error has occured: + ${error.message}`}</div>
-  //const [number, setNumber] = useState(0);
-  //const [books, setBooks] = useState([]);
-
-  // useEffect(()=>{
-  //   console.log("Hello from useEffect");
-  // }, [number]);
-
-  // useEffect(()=>{
-
-  //   const fetchData = async ()=> {
-  //     const response = await fetch('http://localhost:3000/books');
-  //     const data = await response.json();
-  //     console.log(data);
-  //     setBooks(data);
-  //   }
-
-  //   fetchData()
-
-  // },[])
-
-  return <BooksTable tableData={books}/>
+  if (error) return <div>{`An error has occured: + ${error.message}`}</div>
+  
+return (
+  <div>
+    <h1 className="text-2xl font-bold">Books</h1>
+    {
+      isPending ? <div>Loading...</div> : <BooksTable books={data} />
+    }
+  </div>
+);
+  //return <BooksTable tableData={books}/>
 };
 export default Books;
