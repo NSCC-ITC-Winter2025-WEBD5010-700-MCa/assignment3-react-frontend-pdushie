@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import BooksTable from "../components/BooksTable";
+import BooksTable from "../components/books/BooksTable";
+import { Outlet } from "react-router-dom";
 const Books = () => {
 
   const { isPending, error, data } = useQuery({
@@ -18,8 +19,8 @@ const Books = () => {
   
 return (
   <div>
+    <Outlet />
     <h1 className="text-2xl font-bold">Books</h1>
-    <h2 className="text-2xl font-bold">Manage Books</h2>
     {
       isPending ? <div>Loading...</div> : <BooksTable books={data} />
     }

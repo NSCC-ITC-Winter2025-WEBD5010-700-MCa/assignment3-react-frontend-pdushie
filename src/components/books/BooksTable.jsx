@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function BooksTable({ books }) {
 
@@ -29,7 +29,8 @@ function BooksTable({ books }) {
     deleteBookMutation.mutate(bookId);
   }
   return (
-    <div>
+    <>
+      <Link to = '/admin/books/create'>Add New Book</Link>
       <table className="w-full border-collapse border border-gray-200">
         <thead className="bg-gray-200">
           <tr>
@@ -63,7 +64,7 @@ function BooksTable({ books }) {
         </tbody>
 
       </table>
-    </div>
+    </>
   );
 }
 export default BooksTable;
