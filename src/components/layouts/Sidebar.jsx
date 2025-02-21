@@ -9,7 +9,9 @@ import {
   faArrowLeft,
   faArrowRight,
   faBook,
+  faCarSide,
 } from '@fortawesome/free-solid-svg-icons';
+import { faCar } from '@fortawesome/free-solid-svg-icons/faCar';
 
 const SidebarItem = ({ href, label, isCollapsed, icon }) => {
   const location = useLocation();
@@ -44,7 +46,8 @@ const Sidebar = ({ isCollapsed, toggleSidebar }) => {
     { href: '/admin/customers', label: 'Customers', icon: faUsers },
     { href: '/admin/auto-response', label: 'Auto Response', icon: faReply },
     { href: '/admin/subscriptions', label: 'Subscriptions', icon: faBoxOpen },
-    {href: '/admin/books', label: 'Books', icon: faBook}
+    {href: '/admin/books', label: 'Books', icon: faBook},
+    {href: '/admin/vehicles', label: 'Vehicle Manufacturers', icon: faCar}
   ];
 
   return (

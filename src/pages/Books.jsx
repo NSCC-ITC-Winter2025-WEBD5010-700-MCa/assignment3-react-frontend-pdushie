@@ -1,7 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import BooksTable from "../components/books/BooksTable";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 const Books = () => {
+
+  // Get the current location
+  const location = useLocation();
+  console.log(location.pathname)
 
   const { isPending, error, data } = useQuery({
     queryKey: ['booksData'],
@@ -11,7 +15,7 @@ const Books = () => {
       return response.json()
       //return Promise.regect //simulates failed fetch
     },
-    //staleTime: Infinity
+    staleTime: Infinity
   })
   
 
@@ -19,13 +23,14 @@ const Books = () => {
   
 return (
   <div>
-    <Outlet />
     <h1 className="text-2xl font-bold">Books</h1>
-    {
-      isPending ? <div>Loading...</div> : <BooksTable books={data} />
-    }
+
+    {location.pathname === '/admin/books' ? 
+    isPending ? <div>Loading...</div> : <BooksTable books={data} />
+    :  
+    <Outlet />}
+
   </div>
 );
-  //return <BooksTable tableData={books}/>
-};
+}
 export default Books;
