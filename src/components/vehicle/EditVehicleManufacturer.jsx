@@ -1,21 +1,36 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
+import { useForm } from "react-hook-form";
 
 function EditVehicleManufacturer() {
 
   const { id } = useParams();
-  const { isPending, error, data } = useQuery({
+  const { setValue } = useForm();
+    const { isPending, error, data, status } = useQuery({
     queryKey: ['vehicleManufacturerData', id],
     queryFn: async () => {
-      console.log("Fetching Edit Data")
-      const response = await fetch(`https://bunelysiamongodbapi-production.up.railway.app/manufacturers/${id}`);
+      console.log("Fetching vehicle manufacturer data for edit...")
+      const response = await fetch(`https://bunelysiamongodbapi-production.up.railway.app/manufacturers/${id}`,
+        {
+          method: 'GET'
+        }
+      );
+      console.log(response)
+      console.log(isPending)
       return response.json();
     }
   });
 
   useEffect(() => {
-    console.log('Data here', data)
+    if(data){
+      setValue('brand_name', data.brand_name)
+      setValue('brand_name', data.company_name)
+      setValue('brand_name', data.year_founded)
+      setValue('brand_name', data.founder)
+      setValue('brand_name', data.current_ceo)
+    }
+    console.log('Fetched data', data)
   }, [data])
 
   return (
