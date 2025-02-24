@@ -10,6 +10,8 @@ import Books from '../pages/Books';
 import BookCreate from '../components/books/BookCreate';
 import BookEdit from '../components/books/BookEdit';
 import VehicleManufacturer from '../pages/VehicleManufacturer';
+import CreateVehicleManufacturer from '../components/vehicle/CreateVehicleManufacturer';
+import EditVehicleManufacturer from '../components/vehicle/EditVehicleManufacturer';
 
 const router = createBrowserRouter([
   {
@@ -60,7 +62,17 @@ const router = createBrowserRouter([
       },
       {
         path: 'vehicles',
-        element: <VehicleManufacturer />
+        element: <VehicleManufacturer />,
+        children: [
+          {
+            path: 'create',
+            element: <CreateVehicleManufacturer />
+          },
+          {
+            path: ':id/edit',
+            element: <EditVehicleManufacturer />
+          }
+        ]
       }
     ],
   },

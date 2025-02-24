@@ -12,6 +12,7 @@ function BooksTable({ books }) {
       const response = await fetch(`http://localhost:3000/books/${bookId}`, {
         method: 'DELETE'
       })
+      console.log(response)
       return response.json();
     },
     onSuccess: () => {

@@ -23,7 +23,6 @@ function BookCreate () {
     },
     onSuccess: () => {
       queryClient.invalidateQueries(['booksData']);
-      setTimeout(()=>createNotify(), 4000);
       toast.success("Book Created");
       setTimeout(()=>{
         navigate('/admin/books');

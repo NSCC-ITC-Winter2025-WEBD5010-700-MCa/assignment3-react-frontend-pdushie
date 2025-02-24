@@ -1,50 +1,6 @@
 {
   "books": [
     {
-      "id": "1",
-      "title": "The Edge of Tomorrow",
-      "author": "Mary Collins",
-      "published_year": 1999,
-      "genre": "Thriller",
-      "isbn": "6872707809269",
-      "ratings": [
-        2,
-        2,
-        4,
-        4
-      ],
-      "reviews": [
-        {
-          "user": "Maria Harris",
-          "comment": "This is a review for The Hidden Path.",
-          "rating": 4,
-          "date": "31-1-2022"
-        },
-        {
-          "user": "Elizabeth Nelson",
-          "comment": "This is a review for The Last Embrace.",
-          "rating": 2,
-          "date": "14-5-2020"
-        }
-      ],
-      "publisher": {
-        "name": "Simon & Schuster",
-        "address": {
-          "street": "951 Pine Rd",
-          "city": "Berlin",
-          "country": "USA"
-        },
-        "contact": {
-          "phone": "+1-579-4902887",
-          "email": "contact@macmillan.com"
-        }
-      },
-      "price": {
-        "currency": "USD",
-        "amount": 13.89
-      }
-    },
-    {
       "id": "2",
       "title": "Glimmer of Light",
       "author": "Lisa Clark",
