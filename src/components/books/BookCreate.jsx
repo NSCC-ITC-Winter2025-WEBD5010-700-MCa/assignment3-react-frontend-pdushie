@@ -8,10 +8,6 @@ function BookCreate () {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 
-  const collectData = (data) => {
-    console.log(errors)
-  }
-
   const createBookMutation = useMutation({
     mutationFn: async (data) => {
       const response = await fetch('http://localhost:3000/books', {
@@ -26,15 +22,20 @@ function BookCreate () {
       toast.success("Book Created");
       setTimeout(()=>{
         navigate('/admin/books');
-      }, 3000)
+      }, 1500)
       
     }
   })
 
+  const ProcessData = (data) => {
+    createBookMutation.mutate(data);
+    console.log(errors);
+  }
+
   return (
     <div>
       <h2>Create New Book</h2>
-      <BookForm />
+      <BookForm onDataCollected={ProcessData}/>
     <ToastContainer />
     </div>
     

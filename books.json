@@ -1,54 +1,11 @@
 {
   "books": [
     {
-      "id": "2",
       "title": "Glimmer of Light",
       "author": "Lisa Clark",
       "published_year": 1991,
       "genre": "Historical",
-      "isbn": "4967891562763",
-      "ratings": [
-        5,
-        1,
-        5,
-        3
-      ],
-      "reviews": [
-        {
-          "user": "Steven Murphy",
-          "comment": "This is a review for Whispers in the Dark.",
-          "rating": 5,
-          "date": "17-6-2023"
-        },
-        {
-          "user": "Thomas King",
-          "comment": "This is a review for Through the Ashes.",
-          "rating": 1,
-          "date": "1-3-2020"
-        },
-        {
-          "user": "Michael Mitchell",
-          "comment": "This is a review for Storm's End.",
-          "rating": 2,
-          "date": "29-1-2021"
-        }
-      ],
-      "publisher": {
-        "name": "Hachette",
-        "address": {
-          "street": "728 Broadway",
-          "city": "Paris",
-          "country": "Germany"
-        },
-        "contact": {
-          "phone": "+1-437-3476966",
-          "email": "contact@macmillan.com"
-        }
-      },
-      "price": {
-        "currency": "EUR",
-        "amount": 21.77
-      }
+      "id": "2"
     },
     {
       "id": "3",
@@ -1287,46 +1244,11 @@
       }
     },
     {
-      "id": "33",
       "title": "Out of Time",
       "author": "Matthew Roberts",
       "published_year": 2017,
       "genre": "Fiction",
-      "isbn": "7260976215258",
-      "ratings": [
-        5,
-        5
-      ],
-      "reviews": [
-        {
-          "user": "Brian Baker",
-          "comment": "This is a review for The Last Embrace.",
-          "rating": 3,
-          "date": "23-1-2023"
-        },
-        {
-          "user": "Mary Collins",
-          "comment": "This is a review for The Last Horizon.",
-          "rating": 4,
-          "date": "27-4-2020"
-        }
-      ],
-      "publisher": {
-        "name": "HarperCollins",
-        "address": {
-          "street": "884 Broadway",
-          "city": "London",
-          "country": "UK"
-        },
-        "contact": {
-          "phone": "+1-772-8232107",
-          "email": "contact@penguin.com"
-        }
-      },
-      "price": {
-        "currency": "EUR",
-        "amount": 21.27
-      }
+      "id": "33"
     },
     {
       "id": "34",
@@ -2030,6 +1952,20 @@
         "currency": "USD",
         "amount": 45.86
       }
+    },
+    {
+      "id": "3b81",
+      "title": "Temple",
+      "author": "Matthew",
+      "published_year": 2007,
+      "genre": "Action"
+    },
+    {
+      "id": "000a",
+      "title": "Aki Ola Series",
+      "author": "Mich",
+      "published_year": 2010,
+      "genre": "Science"
     }
   ]
 }
