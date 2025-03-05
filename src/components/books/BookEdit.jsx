@@ -32,7 +32,6 @@ function BookEdit() {
           body: JSON.stringify(data)
         }
       )
-      console.log("Runnnn")
       return response.json();
     },
     onSuccess: () => {

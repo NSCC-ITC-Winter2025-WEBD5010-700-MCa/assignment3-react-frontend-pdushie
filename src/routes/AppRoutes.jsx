@@ -9,6 +9,7 @@ import Subscriptions from '../pages/Subscriptions';
 import Books from '../pages/Books';
 import BookCreate from '../components/books/BookCreate';
 import BookEdit from '../components/books/BookEdit';
+import BookDetail from '../components/books/BookDetail';
 import VehicleManufacturer from '../pages/VehicleManufacturer';
 import CreateVehicleManufacturer from '../components/vehicle/CreateVehicleManufacturer';
 import EditVehicleManufacturer from '../components/vehicle/EditVehicleManufacturer';
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
           {
             path: ':id/edit',
             element: <BookEdit />
+          },
+          {
+            path: ':id/detail',
+            element: <BookDetail />
           }
         ]
       },
