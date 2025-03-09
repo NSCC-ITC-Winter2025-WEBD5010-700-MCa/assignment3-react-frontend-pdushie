@@ -13,6 +13,7 @@ import BookDetail from '../components/books/BookDetail';
 import VehicleManufacturer from '../pages/VehicleManufacturer';
 import CreateVehicleManufacturer from '../components/vehicle/CreateVehicleManufacturer';
 import EditVehicleManufacturer from '../components/vehicle/EditVehicleManufacturer';
+import VehicleManufacturerDetail from '../components/vehicle/VehicleManufacturerDetail';
 
 const router = createBrowserRouter([
   {
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
           {
             path: ':id/edit',
             element: <EditVehicleManufacturer />
+          },
+          {
+            path: ':id/detail',
+            element: <VehicleManufacturerDetail />
           }
         ]
       }

@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { Outlet, useLocation } from "react-router-dom";
 import VehicleTable from "../components/vehicle/VehicleTable";
+
 function VehicleManufacturer() {
 
   const currentLocation = useLocation();
@@ -10,7 +11,7 @@ function VehicleManufacturer() {
     queryKey: ['vehicleManufacturerData'],
     queryFn: async () => {
       console.log('Fetching Vehicle data...');
-      const response = await fetch('https://bunelysiamongodbapi-production.up.railway.app/manufacturers');
+      const response = await fetch(`${import.meta.env.VITE_VEHICLE_API_URL}`);
       return response.json();
     },
     staleTime: Infinity

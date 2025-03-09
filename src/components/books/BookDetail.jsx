@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 
 
 function BookDetail() {
@@ -11,14 +12,16 @@ function BookDetail() {
       return response.json();
     }
   });
+  console.log(data)
 
-  const books = data;
+
+
 
   
   return (
     <>
-    <h2 className="text-2xl ">Viewing Book Detail for {books?.title} </h2>
-    <table className="w-full border-collapse border border-gray-200 mt-3">
+    <h2 className="text-2xl ">Viewing Details for the Book {data?.title} </h2>
+    <table className="w-full border-collapse border border-gray-200 mt-3 mb-3">
         <thead className="bg-gray-200">
           <tr>
             <th className="border border-gray-300 px-4 py-2 text-left">ID</th>
@@ -31,20 +34,21 @@ function BookDetail() {
           </tr>
         </thead>
         <tbody>
-          {books.map(book => {
-            return (
-              <tr key={book.id} className="hover:bg-gray-100">
-                <td className="border border-gray-300 px-4 py-2">{book.title}</td>
-                <td className="border border-gray-300 px-4 py-2">{book.author}</td>
-                <td className="border border-gray-300 px-4 py-2">{book.published_year}</td>
-                <td className="border border-gray-300 px-4 py-2">{book.genre}</td>
-                <td className="border border-gray-300 px-4 py-2">{book.ratings && book.ratings.length > 0 ? book.ratings[0] : 'No ratings'}</td>
+          
+              <tr className="hover:bg-gray-100">
+                <td className="border border-gray-300 px-4 py-2">{data?.id}</td>
+                <td className="border border-gray-300 px-4 py-2">{data?.title}</td>
+                <td className="border border-gray-300 px-4 py-2">{data?.author}</td>
+                <td className="border border-gray-300 px-4 py-2">{data?.published_year}</td>
+                <td className="border border-gray-300 px-4 py-2">{data?.genre}</td>
+                <td className="border border-gray-300 px-4 py-2">{data?.ratings && data.ratings.length > 0 ? data.ratings[0] : 'No ratings'}</td>
               </tr>
-            );
-          })}
         </tbody>
 
       </table>
+      <Link className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none
+       focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-3 py-1 text-center
+       dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" to = '/admin/books'>Go back to Book List</Link>
     </>
     
   );
