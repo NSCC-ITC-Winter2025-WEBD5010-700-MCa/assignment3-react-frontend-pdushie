@@ -26,7 +26,7 @@ function BooksTable({ books }) {
   const handleDelete = (bookId) => {
     //send a delete request to our api to delete the selected record
 
-    if(window.confirm(`Are you sure you want to delete record with ID: ${bookId}?`))
+    if(window.confirm(`Are you sure you want to delete the book with ID: ${bookId}?`))
     deleteBookMutation.mutate(bookId);
   }
   return (
